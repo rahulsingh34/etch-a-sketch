@@ -14,7 +14,7 @@ gridBoxes.forEach((gridBox) => {
 	});
 });
 
-let slider = document.getElementById("slider");
+let slider = document.getElementById('slider');
 let slider_output = document.getElementById("output");
 slider_output.innerText = slider.value + ' x ' + slider.value;
 
@@ -26,7 +26,7 @@ slider.oninput = function () {
 		gridBox.classList.add('grid-box');
 		document.getElementById('etch').appendChild(gridBox);
 	}
-	let gridBoxes = document.querySelectorAll('.grid-box');
+	gridBoxes = document.querySelectorAll('.grid-box');
 
 	gridBoxes.forEach((gridBox) => {
 	gridBox.addEventListener('mouseenter', () => {
@@ -34,3 +34,11 @@ slider.oninput = function () {
 	});
 });
 }
+
+let clearBoard = document.getElementById('clear');
+
+clearBoard.addEventListener('click', () => {
+	gridBoxes.forEach((gridBox) => {
+		gridBox.classList.remove('hovered');
+	});
+});
