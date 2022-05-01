@@ -1,6 +1,6 @@
 const grid = document.getElementById('etch');
 
-for (i = 0; i < 16; i++) {
+for (i = 0; i < 256; i++) {
 	let gridBox = document.createElement('div');
 	gridBox.classList.add('grid-box');
 	document.getElementById('etch').appendChild(gridBox);
@@ -21,10 +21,13 @@ slider_output.innerText = slider.value + ' x ' + slider.value;
 slider.oninput = function () {
 	slider_output.innerText = this.value + ' x ' + this.value;
 	grid.innerHTML = ' ';
-	for (i = 0; i < parseInt(this.value); i++) {
+	let area = parseInt(this.value * this.value);
+	for (i = 0; i < area; i++) {
 		let gridBox = document.createElement('div');
 		gridBox.classList.add('grid-box');
 		document.getElementById('etch').appendChild(gridBox);
+		grid.style.gridTemplateRows = `repeat(${this.value}, 1fr)`;
+		grid.style.gridTemplateColumns = `repeat(${this.value}, 1fr)`;
 	}
 	gridBoxes = document.querySelectorAll('.grid-box');
 

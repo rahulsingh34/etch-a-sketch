@@ -6,8 +6,7 @@
 	--blue: #00ffbc;
 	--pink: #ff00b4;
 	--sbackground: #010B12;
-	--height: 16;
-	--width: 16;
+	--area: 16;
 }
 
 * {
@@ -29,6 +28,8 @@
 	width: 500px;
 	background-color: lightgray;
 	border: var(--sbackground) solid 2px;
+	grid-template-rows: repeat(var(--area), 1fr);
+	grid-template-columns: repeat(var(--area), 1fr);
 }
 
 h1 {
