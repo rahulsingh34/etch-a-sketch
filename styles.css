@@ -19,15 +19,18 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--background);
+	background-image: url(neon.jpeg);
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
 }
 
 #etch {
 	display: grid;
 	height: 500px;
 	width: 500px;
-	background-color: lightgray;
-	border: var(--sbackground) solid 2px;
+	background-color: rgba(211, 211, 211, 0.5);
+	border: var(--purple) solid 1px;
 	grid-template-rows: repeat(var(--area), 1fr);
 	grid-template-columns: repeat(var(--area), 1fr);
 }
